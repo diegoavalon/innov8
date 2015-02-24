@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: innov8_development
+
+test:
+  adapter: postgresql
+  database: innov8_test
+
+production:
+  adapter: postgresql
+  database: innov8_production
