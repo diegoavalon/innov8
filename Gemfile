@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'simple_form'
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :development do
     gem 'better_errors'

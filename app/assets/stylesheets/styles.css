@@ -1,0 +1,89 @@
+#login {
+	margin-top: 20%;
+}
+
+label {
+	display: block;
+	font-size: 11px;
+	line-height: 20px;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin: 0;
+}
+
+form {
+	display: block;
+	margin-top: 0em;
+}
+
+.form-control:focus {
+  border-color: transparent; 
+	outline: 0;
+	-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,0),0 0 0 rgba(102,175,233,.6);
+	box-shadow: inset 0 0px 0px rgba(0,0,0,0),0 0 0 rgba(102,175,233,.6);
+}
+
+.form-group-default {
+	background-color: transparent;
+	position: relative;
+	border: 2px solid rgba(0,0,0,0.07);
+	border-radius: 2px;
+	padding-top: 7px;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-bottom: 0;
+	overflow: hidden;
+	-webkit-transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease;
+}
+
+.form-group-default .form-control {
+	border: none;
+	height: 25px; 
+	min-height: 25px;
+	padding: 0;
+	margin-top: -4px;
+	background: none;
+}
+
+.form-control {
+	font-family: Arial,sans-serif;
+	-webkit-appearance: none;
+	color: #2c2c2c;
+	outline: 0;
+	/*height: 22px !important; */
+	padding: 9px 12px;
+	line-height: normal;
+	font-size: 14px;
+	font-weight: normal;
+	vertical-align: middle;
+	min-height: 35px;
+	-webkit-transition: all 0.12s ease;
+	transition: all 0.12s ease;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-transition: background 0.2s linear 0s;
+	transition: background 0.2s linear 0s;
+}
+
+.form-group {
+	margin-bottom: 6px;
+}
+
+.btn {
+	/* button_box: */
+	background: #FCAF3C;
+	border-radius: 2px;
+	/* SIGN IN: */
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 12px 20px 14px 20px;
+	color: #F5F5F5;
+	letter-spacing: 0.7px;
+	line-height: 21px;
+	width: 100%;
+}
