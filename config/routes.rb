@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root 'welcome#index'
-
+  
+  devise_for :users
+  
+  devise_scope :user do
+    get '/login' => 'devise/sessions#new', as: :login
+  end
+  
+  resources :new_entry, only: [:index]
   resources :participant, only: [:index]
 
 

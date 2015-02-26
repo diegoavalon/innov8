@@ -15,7 +15,10 @@
  */
 
 
- body {
+ html, body {
  	background-color: #F2F2F2;
  	font-family: 'Montserrat', sans-serif;
+ 	letter-spacing: 0.7;
+ 	height: 100%;
+ 	width: 100%;
  }

@@ -1,5 +1,34 @@
+/*  Login Page START  */
+
 #login {
-	margin-top: 20%;
+	padding-top: 280px;
+}
+
+#new-password {
+	padding-top: 230px;
+}
+
+.alert {
+	color: #f55753;
+}
+
+.login-img {
+	padding-top: 40px;
+	padding-right: 40px;
+	float: right;
+}
+
+.mute-grey {
+	color: #8C7E77;
+	opacity: 0.5;
+}
+
+#login a, #new-password a {
+	font-size: 16px;
+}
+
+#login a:hover, #new-password a:hover {
+	text-decoration: none;
 }
 
 label {
@@ -27,7 +56,7 @@ form {
 	background-color: transparent;
 	position: relative;
 	border: 2px solid rgba(0,0,0,0.07);
-	border-radius: 2px;
+	border-radius: 3px;
 	padding-top: 7px;
 	padding-left: 12px;
 	padding-right: 12px;
@@ -73,17 +102,180 @@ form {
 	margin-bottom: 6px;
 }
 
-.btn {
+#login .btn, #new-password .btn {
 	/* button_box: */
 	background: #FCAF3C;
 	border-radius: 2px;
+	border: none;
 	/* SIGN IN: */
 	font-family: Montserrat-Bold;
 	font-size: 18px;
 	text-transform: uppercase;
-	padding: 12px 20px 14px 20px;
+	padding: 14px 20px 16px 20px;
 	color: #F5F5F5;
 	letter-spacing: 0.7px;
 	line-height: 21px;
 	width: 100%;
+	margin-bottom: 16px;
+}
+
+#login .btn:hover, #new-password .btn:hover {
+	background: #EFA73C;
+	color: #F5F5F5;
+}
+
+.footer {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	color: #8C7E77
+}
+
+/*  Login Page END  */
+
+/*  New Password START  */
+
+#new-password img {
+	padding-bottom: 30px;
+}
+
+/*  New Password END  */
+
+/*  Welcome Dashboard START  */
+nav {
+	height: 70px;
+	background-color: #8C7E77;
+	color: #F5F5F5
+}
+
+.dashboard-logo {
+	padding-top: 10px;
+	padding-left: 30px;
+}
+
+nav li {
+	padding-right: 30px;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding-top: 20px;
+}
+
+.nav-user-details {
+	font-size: 19px;
+	padding-top: 20px;
+	padding-right: 30px;
+}
+
+.logout-link {
+	padding-left: 30px;
+}
+
+.logout-link a {
+	color: #F5F5F5;
+	opacity: 0.8;
+}
+
+#dashboard {
+	padding-top: 200px;
+}
+
+.panel {
+	width: 90%;
+}
+
+.panel-coming-soon {
+	background-color: #CDCDCD;
+	opacity: 0.3
+}
+
+.panel-coming-soon {
+	color: #222222;
+}
+
+figure {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+figure h2 {
+	margin-top: 30px;
+}
+
+figure figcaption {
+	color: #4A4A4A;
+} 
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+/*  Welcome Dashboard END  */
+
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+	#login, #new-password {
+		padding: 0;
+	}
+
+	.logo-sign-in {
+		text-align: center;
+	}
+
+	.login-img {
+		padding-top: 0;
+		padding-right: 0;
+		padding-bottom: 60px;
+		float: none;
+	}
+
+	.inner-wrapper {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+	.login-img, .new-password-img {
+		max-width: 65%;
+		padding-bottom: 30px;
+	}
+
+	.inner-wrapper {
+		width: 90%;
+	}
+
+	#login a {
+	font-size: 14px;
+	text-align: center !important;
+	}
+
 }
