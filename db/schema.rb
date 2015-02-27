@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224223005) do
+ActiveRecord::Schema.define(version: 20150226231229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,29 @@ ActiveRecord::Schema.define(version: 20150224223005) do
     t.integer  "foot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "chest"
+    t.integer  "waist"
+    t.integer  "low_hip"
+    t.integer  "high_hip"
+    t.integer  "inseam"
+    t.integer  "thigh"
+    t.integer  "upper_arm"
+    t.integer  "sleeve_length"
+    t.integer  "shoe_size"
+    t.integer  "lf_width"
+    t.integer  "lf_heel_to_arch"
+    t.integer  "lf_heel_to_toe"
+    t.integer  "rf_width"
+    t.integer  "rf_heel_to_arch"
+    t.integer  "rf_heel_to_toe"
+    t.integer  "lh_palm_width_flat"
+    t.integer  "lh_palm_width_round"
+    t.integer  "lh_palm_length"
+    t.integer  "lh_middle_finger"
+    t.integer  "rh_palm_width_flat"
+    t.integer  "rh_palm_width_round"
+    t.integer  "rh_palm_length"
+    t.integer  "rh_middle_finger"
   end
 
   create_table "users", force: :cascade do |t|

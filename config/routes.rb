@@ -8,8 +8,7 @@ Rails.application.routes.draw do
     get '/login' => 'devise/sessions#new', as: :login
   end
   
-  resources :new_entry, only: [:index]
-  resources :participant, only: [:index]
+  resources :participants
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -6,9 +6,9 @@
 			</div>
 			<div class="col-sm-5">
 				<ul class="nav nav-pills">
-					<li>New Entry</li>
-					<li>Find/Edit</li>
-					<li>Library</li>
+					<li><%= link_to 'New Entry', new_participant_path %></li>
+					<li><%= link_to 'Find/Edit', participants_path %></li>
+					<li><%= link_to 'Library' %></li>
 				</ul>
 			</div>
 			<div class="col-sm-5">
@@ -28,7 +28,7 @@
 						<figure>
 						<%= image_tag 'girl_ICON.png', class: "center-block" %>
 							<figcaption class="text-center">
-								<h2>New Entry</h2>
+								<h2><%= link_to 'New Entry', new_participant_path %></h2>
 							</figcaption>
 						</figure>
 					</div>

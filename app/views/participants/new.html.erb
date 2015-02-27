@@ -1,0 +1,338 @@
+<nav class="nav-page-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<%= image_tag 'Innov8_Logo_negative.png', :alt => 'Innov8 Logo', class: "dashboard-logo" %>
+			</div>
+			<div class="col-sm-5">
+				<ul class="nav nav-pills">
+					<li><%= link_to 'New Entry', new_participant_path %></li>
+					<li><%= link_to 'Find/Edit', participants_path %></li>
+					<li><%= link_to 'Library' %></li>
+				</ul>
+			</div>
+			<div class="col-sm-5">
+				<div class="nav-user-details pull-right">
+					<% if user_signed_in? %>
+					  Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
+					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
+					<% end %>
+				</div>
+			</div>
+		</div> <!-- Nav Row END -->
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="nav-headline text-center">New Entry</h1>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<section id="participant-form" class="center-block">
+	<%= simple_form_for @participant do |f| %>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-form center-block">
+					<div class="form-wrapper">
+						<h3>General</h3>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :fname, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lname, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+							<div class="form-group form-group-default">
+								<%= f.input :address, class: 'form-control' %>
+							</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :city, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="form-group form-group-default">
+									<%= f.input :state, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="form-group form-group-default">
+									<%= f.input :zipcode, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+							<div class="form-group form-group-default">
+								<%= f.input :email, class: 'form-control' %>
+							</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-form center-block">
+					<div class="form-wrapper">
+						<h3>Background</h3>
+						<div class="form-group form-group-default">
+							<%= f.input :participant_type %>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :ethnicity %>
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="form-group form-group-default">
+									<%= f.input :gender %>									
+								</div>
+							</div>
+							<div class="col-xs-3">
+								<div class="form-group form-group-default">
+									<%= f.input :age %>									
+								</div>
+							</div>
+						</div>
+						<div class="form-group form-group-default">
+							<%= f.input :sales_area %>
+						</div>
+						<div class="form-group form-group-default">
+							<%= f.input :discipline %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-form center-block">
+					<div class="form-wrapper">
+						<h3>Feet</h3>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :shoe_size, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lf_width, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lf_heel_to_arch, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lf_heel_to_toe, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default disabled">
+									<%= f.input :shoe_size, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rf_width, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rf_heel_to_arch, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rf_heel_to_toe, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-form center-block">
+					<div class="form-wrapper">
+						<h3>Hands</h3>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_round, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_middle_finger, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_round, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_middle_finger, class: 'form-control' %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-form center-block">
+						<div class="form-wrapper">
+							<h3>Body</h3>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :chest, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :waist, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :low_hip, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :high_hip, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :inseam, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :thigh, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+							<hr>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :upper_arm, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :sleeve_length, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-form center-block">
+						<div class="form-wrapper">
+							<h3>Miscellaneous</h3>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :weight, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class="form-group form-group-default">
+										<%= f.input :height_ft, class: 'form-control' %>
+									</div>
+								</div>
+								<div class="col-xs-3">
+									<div class="form-group form-group-default">
+										<%= f.input :height_in, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group form-group-default">
+										<%= f.input :bra_size, class: 'form-control' %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div> <!-- Form Container END -->
+	
+
+	<div class="row row-centered">
+		<div class="col-xs-2 col-centered">
+			<div class="button-main">
+				<br><br>
+				<%= f.button :submit, "Submit" %>
+			</div>
+		</div>
+	</div>
+	<% end %>
+
+	<footer class="page-footer">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="footer mute-grey">
+					<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+</section>
