@@ -6,29 +6,78 @@
 			</div>
 			<div class="col-sm-5">
 				<ul class="nav nav-pills">
-					<li><%= link_to 'New Entry', new_participant_path, class: "active-page" %></li>
-					<li><%= link_to 'Find/Edit', participants_path %></li>
+					<li><%= link_to 'New Entry', new_participant_path %></li>
+					<li><%= link_to 'Find/Edit', participants_path, class: "active-page" %></li>
 					<li><%= link_to 'Library' %></li>
 				</ul>
 			</div>
 			<div class="col-sm-5">
 				<div class="nav-user-details pull-right">
 					<% if user_signed_in? %>
-					  Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
-					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
+					Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
+					<span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
 					<% end %>
 				</div>
 			</div>
 		</div> <!-- Nav Row END -->
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="nav-headline text-center">New Entry</h1>
+				<h1 class="nav-headline text-center">Profile</h1>
 			</div>
 		</div>
 	</div>
 </nav>
 
-<section id="participant-form" class="center-block">
+<section id="profile-overview">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-1">
+				<%= image_tag 'Shirt.png' %>
+			</div>
+			<div class="col-sm-7">
+				<h3>Name:</h3>
+				<h1><%= @participant.fname + " " + @participant.lname %></h1>
+				<h3>Measurements:</h3>
+				<div class="row">
+					<div class="col-sm-4">
+						<div class="panel text-center">
+							<h1>46</h1>
+							<h4>Pants</h4>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="panel text-center">
+							<h1>L</h1>
+							<h4>Shirt</h4>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="panel text-center">
+							<h1>11</h1>
+							<h4>Shoes</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Profile Overview Row END -->
+		<br><br>
+		<div class="row">
+			<div class="col-sm-6">
+				<h2><%= link_to '+ Add Another Entry', new_participant_path %></h2>
+			</div>
+			<div class="col-sm-6">
+				<div class="button-shape pull-right">
+					<br>
+					<%= link_to 'Edit' %>
+					<%= link_to 'Delete' %>
+				</div>
+			</div>			
+		</div>	<!-- Crud Nav Links END -->
+	</div>
+</section>
+
+<section id="form-summary">
+	
 	<%= simple_form_for @participant do |f| %>
 	<div class="container">
 		<div class="row">
@@ -307,26 +356,18 @@
 
 			</div> <!-- Form Second Half END -->
 		</div> <!-- Form Row END -->
-		<div class="row row-centered">
-			<div class="col-xs-2 col-centered">
-				<div class="button-main">
-					<br><br>
-					<%= f.button :submit, "Submit" %>
-				</div>
-			</div>
-		</div>
 	</div> <!-- Form Container END -->
 
 
 	<% end %>
+</section>
 
-	<footer class="page-footer">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="footer mute-grey">
-					<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
-				</div>
+<footer class="page-footer">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="footer mute-grey">
+				<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
 			</div>
 		</div>
-	</footer>
-</section>
+	</div>
+</footer>

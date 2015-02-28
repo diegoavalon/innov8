@@ -4,4 +4,5 @@ class Participant < ActiveRecord::Base
 	# has_one :hand
 
 	validates :fname, :presence => true
+	validates :lname, :presence => true
 end

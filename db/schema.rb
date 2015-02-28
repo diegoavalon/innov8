@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226231229) do
+ActiveRecord::Schema.define(version: 20150228004242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,10 @@ ActiveRecord::Schema.define(version: 20150226231229) do
     t.integer  "rh_palm_width_round"
     t.integer  "rh_palm_length"
     t.integer  "rh_middle_finger"
+    t.string   "tops_size"
+    t.string   "alpha_bottoms"
+    t.integer  "numeric_bottoms"
+    t.text     "comments"
   end
 
   create_table "users", force: :cascade do |t|
