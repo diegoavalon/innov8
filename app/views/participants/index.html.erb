@@ -1,0 +1,29 @@
+<nav class="nav-page-header">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<%= link_to image_tag('Innov8_Logo_negative.png'), root_path , :alt => 'Innov8 Logo', class: "dashboard-logo" %>
+			</div>
+			<div class="col-sm-5">
+				<ul class="nav nav-pills">
+					<li><%= link_to 'New Entry', new_participant_path %></li>
+					<li><%= link_to 'Find/Edit', participants_path, class: "active-page" %></li>
+					<li><%= link_to 'Library' %></li>
+				</ul>
+			</div>
+			<div class="col-sm-5">
+				<div class="nav-user-details pull-right">
+					<% if user_signed_in? %>
+					Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
+					<span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
+					<% end %>
+				</div>
+			</div>
+		</div> <!-- Nav Row END -->
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="nav-headline text-center">Search</h1>
+			</div>
+		</div>
+	</div>
+</nav>
