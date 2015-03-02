@@ -278,6 +278,20 @@ background-color: #626262;
 }
 /*  Profile Page END  */
 
+/*  Search Page Start  */
+.search-bar {
+	height: 70px;
+	background-color: #E1DFE0;
+	color: #222222;
+}
+
+.search-bar p {
+	line-height: 70px;
+}
+
+/*  Search Page END  */
+
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
 	.container {width: 1320px;}
