@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150304224843) do
+ActiveRecord::Schema.define(version: 20150305192640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -136,6 +136,11 @@ ActiveRecord::Schema.define(version: 20150304224843) do
     t.datetime "updated_at"
     t.boolean  "admin",                  default: false
     t.boolean  "approved",               default: false, null: false
+    t.string   "fname"
+    t.string   "lname"
+    t.boolean  "apparel"
+    t.boolean  "footwear"
+    t.boolean  "gloves"
   end
 
   add_index "users", ["approved"], name: "index_users_on_approved", using: :btree

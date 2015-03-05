@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+  root 'visitors#index'
   
   # devise_for :admins
   devise_for :users
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get '/login' => 'devise/sessions#new', as: :login
   end
   
+  resources :users, only: [:show]
   resources :participants
 
 

@@ -18,12 +18,10 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
 	text-decoration: none;
-	color: inherit;
 }
 
 a:hover {
 	text-decoration: none;
-	color: inherit;
 }
 /*  Login Page START  */
 
@@ -97,6 +95,14 @@ label {
 }
 
 /*  Login Page END  */
+
+/*  User Edit */
+
+#edit-user {
+	padding-top: 60px;
+}
+
+/*  User Edit END  */
 
 /*  New Password START  */
 
