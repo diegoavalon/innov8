@@ -22,7 +22,7 @@
 		</div> <!-- Nav Row END -->
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="nav-headline text-center">Profile</h1>
+				<h1 class="nav-headline text-center">Edit Profile</h1>
 			</div>
 		</div>
 	</div>
@@ -31,7 +31,6 @@
 <section id="profile-overview">
 	<div class="container">
 		<div class="row">
-			<!-- <div class="alert text-center"><%= notice %></div> -->
 			<div class="col-sm-3 col-sm-offset-1">
 				<%= image_tag 'Shirt.png' %>
 			</div>
@@ -64,15 +63,14 @@
 		<br><br>
 		<div class="row">
 			<div class="col-sm-6">
-				<h2><%= link_to '+ Add Another Entry', new_participant_path %></h2>
+				<h2><%= link_to '← Back', participant_path(@participant.id) %></h2>
 			</div>
 			<div class="col-sm-6">
 				<div class="button-shape pull-right">
 					<br>
-					<%= link_to 'Edit', edit_participant_path(@participant.id) %>
-					<%= link_to 'Delete', participant_path(@participant),
-																								:data => {:confirm => "Are you sure you want to delete this entry?",
-																								:method => "delete"} %>
+					<%= link_to 'Delete Entry', participant_path(@participant),
+																			:data => {:confirm => "Are you sure you want to delete this entry?",
+																			:method => "delete"} %>
 				</div>
 			</div>			
 		</div>	<!-- Crud Nav Links END -->
@@ -94,13 +92,3 @@
 		</div>
 	</div>
 </footer>
-
-<script>
-	$( "#form-summary :input" ).prop( "disabled", true );
-	$( "#form-summary :input" ).text( )
-	$( "#form-summary div" ).addClass( "form-group-default-disabled" );
-	$( "h3" ).css("padding-top", "10px");
-	$( "hr" ).css({"margin-left": "10px", "margin-right": "10px"});
-	// setTimeout( "$('.alert').show();",5000 );
-
-</script>

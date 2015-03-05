@@ -67,7 +67,7 @@ label {
 	margin: 0;
 }
 
-#login .btn, #new-password .btn, #participant-form .btn {
+#login .btn, #new-password .btn, #participant-form .btn, #form-summary .btn, .quick-search-btn {
 	/* button_box: */
 	background: #FCAF3C;
 	border-radius: 2px;
@@ -84,7 +84,7 @@ label {
 	margin-bottom: 16px;
 }
 
-#login .btn:hover, #new-password .btn:hover, #participant-form .btn:hover {
+#login .btn:hover, #new-password .btn:hover, #participant-form .btn:hover, #form-summary .btn:hover, .quick-search-btn:hover {
 	background: #EFA73C;
 	color: #F5F5F5;
 }
@@ -231,6 +231,10 @@ background-color: #626262;
 	text-transform: uppercase;
 }
 
+.string-styling {
+	text-transform: capitalize;
+}
+
 .panel-form {
 	width: 100%;
 }
@@ -241,6 +245,14 @@ background-color: #626262;
 
 .page-footer {
 	padding-top: 80px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+color: #A0A0A0;
+}
+
+.form-group-default-disabled {
+	border: 0 !important;
 }
 
 /*  New Entry END  */
@@ -279,14 +291,18 @@ background-color: #626262;
 /*  Profile Page END  */
 
 /*  Search Page Start  */
-.search-bar {
-	height: 70px;
-	background-color: #E1DFE0;
-	color: #222222;
+
+#search {
+	padding-top: 100px;
 }
 
-.search-bar p {
-	line-height: 70px;
+#search input {
+	border: 0;
+	width: 100%;
+}
+
+#search-results {
+	display: none;
 }
 
 /*  Search Page END  */

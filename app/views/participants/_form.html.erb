@@ -1,0 +1,290 @@
+<%= simple_form_for @participant do |f| %>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6"> <!-- Form First Half Start --> 
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>General</h3>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :fname, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :lname, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-group-default">
+						<%= f.input :address, class: 'form-control' %>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :city, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :state, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :zipcode, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-group-default">
+						<%= f.input :email, as: :email, class: 'form-control' %>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>Body</h3>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :chest, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :waist, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :low_hip, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :high_hip, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :inseam, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :thigh, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :upper_arm, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :sleeve_length, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>Body (Misc.)</h3>
+					<div class="row">
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :height_ft, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :height_in, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :weight, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :alpha_bottoms, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :numeric_bottoms, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :tops_size, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :bra_size, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+		</div> <!-- Form First Half END --> 
+		<div class="col-md-6"> <!-- Form Second Half START -->
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>Background</h3>
+					<div class="form-group form-group-default">
+						<%= f.input :participant_type %>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :ethnicity %>
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :gender %>									
+							</div>
+						</div>
+						<div class="col-xs-3">
+							<div class="form-group form-group-default">
+								<%= f.input :age %>									
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-group-default">
+						<%= f.input :sales_area %>
+					</div>
+					<div class="form-group form-group-default">
+						<%= f.input :discipline %>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>Hands</h3>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :lh_palm_width_flat, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :lh_palm_width_round, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :lh_palm_length, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :lh_middle_finger, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :rh_palm_width_flat, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :rh_palm_width_round, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :rh_palm_length, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :rh_middle_finger, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-form center-block">
+				<div class="form-wrapper">
+					<h3>Feet</h3>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :lf_width, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :lf_heel_to_arch, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :lf_heel_to_toe, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :rf_width, class: 'form-control' %>
+							</div>
+						</div>						
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :rf_heel_to_arch, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<div class="form-group form-group-default">
+								<%= f.input :rf_heel_to_toe, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-group-default">
+						<%= f.input :comments, class: 'form-control' %>
+					</div>
+				</div>
+			</div>
+
+		</div> <!-- Form Second Half END -->
+	</div> <!-- Form Row END -->
+	<div class="row row-centered">
+		<div class="col-xs-2 col-centered">
+			<div class="button-main">
+				<br><br>
+				<%= f.button :submit, "Submit" %>
+			</div>
+		</div>
+	</div>
+</div> <!-- Form Container END -->
+
+
+<% end %>

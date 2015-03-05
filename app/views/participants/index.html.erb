@@ -27,17 +27,76 @@
 		</div>
 	</div>
 </nav>
-<div class="search-bar">
+
+<section id="search">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<p class="lead">Quickly search for one or many participants by keyword.</p>
+		<div class="row row-centered">
+			<div class="col-md-6 col-centered">
+				<h1 class="text-center">Quick Search</h1>
+				<br>
+				<%= search_form_for @search do |f| %>
+				<div class="form-group form-group-default">
+					<%= f.label :fname_or_lname_or_email_or_city_or_state_or_email_cont, "Search by Name, Email, or Location" %>
+					<%= f.text_field :fname_or_lname_or_email_or_city_or_state_or_email_cont %>
+				</div>
 			</div>
-			<div class="col-md-4">
-				<%= simple_form_for @search do |f| %>
-					f.
-				<% end %>
+		</div>
+		<div class="row row-centered">
+			<div class="col-xs-2 col-centered">
+				<div class="button-main">
+					<p style="padding-top: 10px; padding-bottom: 10px;" class="text-center"><%= link_to "+ Advanced Search" %></p>
+					<br>
+					<%= f.submit "Search", class: "quick-search-btn" %>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+
+	<% end %>
+
+</section>
+
+<section id="search-results">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<br>
+				<table id="search-results-table" class="table table-hover" cellspacing="0" width="100%">
+				    <thead>
+				        <tr>
+				            <th><%= sort_link @search, :fname, "Name" %></th>
+				            <th><%= sort_link @search, :participant_type, "Participant Type" %></th>
+				            <th><%= sort_link @search, :city, "City" %></th>
+				            <th><%= sort_link @search, :state, "State" %></th>
+				            <th><%= sort_link @search, :email, "Email" %></th>
+				            <th><%= sort_link @search, :phone, "Phone" %></th>
+				        </tr>
+				    </thead>
+
+				    <% @participants.each do |participant| %>
+				    <tbody>
+				        <tr>
+				            <td><%= link_to "#{participant.fname + ' ' + participant.lname}", participant_path(participant.id) %></td>
+				            <td><%= participant.participant_type %></td>
+				            <td><%= participant.city %></td>
+				            <td><%= participant.state %></td>
+				            <td><%= participant.email %></td>
+				            <td><%= link_to 'View Profile', participant_path(participant.id) %></td>
+				        </tr>
+		        <% end %>
+				    </tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="page-footer">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="footer mute-grey">
+				<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
+			</div>
+		</div>
+	</div>
+</footer>

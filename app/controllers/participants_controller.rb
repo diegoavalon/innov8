@@ -3,7 +3,8 @@ class ParticipantsController  < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		@participants = Participant.all 
+		@search = Participant.search(params[:q])
+		@participants = @search.result  
 	end
 
 	def new
@@ -25,13 +26,25 @@ class ParticipantsController  < ApplicationController
 	end
 
 	def edit
+		@participant = Participant.find(params[:id])
 	end
 
 	def update
+		@participant = Participant.find(params[:id])
+		if @participant.update(participant_params)
+			flash[:notice] = "Contact Updated Successfully"
+			redirect_to participant_path(@participant.id)
+		else
+			render 'edit'
+		end
 	end
 
 
 	def destroy
+		@participant = Participant.find(params[:id])
+		@participant.destroy
+		flash[:notice] = "Contact deleted."
+		redirect_to new_participant_path
 	end
 
 private
