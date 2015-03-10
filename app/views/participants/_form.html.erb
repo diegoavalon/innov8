@@ -42,6 +42,8 @@
 					</div>
 				</div>
 			</div>
+
+		<section id="apparel">
 			<div class="panel panel-form center-block">
 				<div class="form-wrapper">
 					<h3>Body</h3>
@@ -142,6 +144,7 @@
 					</div>
 				</div>
 			</div>
+		</section>
 	
 		</div> <!-- Form First Half END --> 
 		<div class="col-md-6"> <!-- Form Second Half START -->
@@ -177,6 +180,7 @@
 				</div>
 			</div>
 
+		<section id="gloves">
 			<div class="panel panel-form center-block">
 				<div class="form-wrapper">
 					<h3>Hands</h3>
@@ -231,6 +235,9 @@
 					</div>
 				</div>
 			</div>
+		</section>
+		
+		<section id="footwear">
 			<div class="panel panel-form center-block">
 				<div class="form-wrapper">
 					<h3>Feet</h3>
@@ -272,7 +279,8 @@
 						<%= f.input :comments, class: 'form-control' %>
 					</div>
 				</div>
-			</div>
+			</div>				
+		</section>
 
 		</div> <!-- Form Second Half END -->
 	</div> <!-- Form Row END -->
@@ -285,6 +293,41 @@
 		</div>
 	</div>
 </div> <!-- Form Container END -->
-
-
 <% end %>
+
+<% if current_user.footwear != true %>
+	<script>
+		$( "#footwear :input" ).prop( "disabled", true );
+		$( "#footwear :input" ).text( )
+		$( "#footwear div" ).addClass( "form-group-default-disabled" );
+		$( "h3" ).css("padding-top", "10px");
+		$( "hr" ).css({"margin-left": "10px", "margin-right": "10px"});
+		// setTimeout( "$('.alert').show();",5000 );
+	</script>
+<% end %>
+
+<% if current_user.gloves != true %>
+	<script>
+		$( "#gloves :input" ).prop( "disabled", true );
+		$( "#gloves :input" ).text( )
+		$( "#gloves div" ).addClass( "form-group-default-disabled" );
+		$( "h3" ).css("padding-top", "10px");
+		$( "hr" ).css({"margin-left": "10px", "margin-right": "10px"});
+		// setTimeout( "$('.alert').show();",5000 );
+	</script>
+<% end %>
+
+<% if current_user.apparel != true %>
+	<script>
+		$( "#apparel :input" ).prop( "disabled", true );
+		$( "#apparel :input" ).text( )
+		$( "#apparel div" ).addClass( "form-group-default-disabled" );
+		$( "h3" ).css("padding-top", "10px");
+		$( "hr" ).css({"margin-left": "10px", "margin-right": "10px"});
+		// setTimeout( "$('.alert').show();",5000 );
+	</script>
+<% end %>
+
+
+
+

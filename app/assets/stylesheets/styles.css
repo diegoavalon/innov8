@@ -16,7 +16,17 @@ h1, h2, h3, h4, h5, h6 {
 	
 }
 
+ol, ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.table.table-hover tbody tr:hover td {
+  background: #FFFCEE!important;
+}
+
 a {
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -129,15 +139,12 @@ nav {
 }
 
 nav li {
-	padding-right: 30px;
-	text-transform: uppercase;
-	font-size: 18px;
 	padding-top: 12px;
 }
 
 .nav-user-details {
-	font-size: 19px;
-	padding-top: 20px;
+	font-size: 17px;
+	padding-top: 24px;
 	padding-right: 30px;
 }
 
@@ -195,6 +202,78 @@ figure figcaption {
 
 .grow { transition: all .3s ease-in-out; }
 .grow:hover { transform: scale(1.1); }
+
+.button a {
+  color: #fff;
+}
+
+.lone-btn {
+	float: left;
+	min-width: 150px;
+	max-width: 250px;
+	display: block;
+	margin: 1em;
+}
+
+.button {
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 1em 2em;
+  border: none;
+  background: none;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ujarak */
+.button--ujarak {
+	-webkit-transition: border-color 0.4s, color 0.4s;
+	transition: border-color 0.4s, color 0.4s;
+}
+.button--ujarak::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #F4B350;
+	z-index: -1;
+	opacity: 0;
+	-webkit-transform: scale3d(0.7, 1, 1);
+	transform: scale3d(0.7, 1, 1);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+	transition: transform 0.4s, opacity 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.button--ujarak,
+.button--ujarak::before {
+	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak:hover {
+	color: #fff;
+	border-color: #37474f;
+}
+
+.button--ujarak:hover::before {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
 
 /*  Welcome Dashboard END  */
 

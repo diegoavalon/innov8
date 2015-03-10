@@ -10,7 +10,7 @@
 					<%= simple_form_for @user do |f| %>
 					<%= f.error_notification %>
 		
-					<div class="form-inputs">
+					<div class="">
 						<%= f.input :fname, required: true %>
 						<%= f.input :lname, required: true %>
 						<%= f.input :email, required: true %>
@@ -22,7 +22,7 @@
 						<%= f.input :gloves, as: :select, required: true %>
 					</div>
 					<br>
-					<div class="form-actions">
+					<div class="button-main">
 						<%= f.button :submit, "Sign up" %>
 					</div>
 					<% end %>
