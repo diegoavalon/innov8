@@ -32,7 +32,7 @@ class ParticipantsController  < ApplicationController
 	def update
 		@participant = Participant.find(params[:id])
 		if @participant.update(participant_params)
-			flash[:notice] = "Contact Updated Successfully"
+			flash[:notice] = "Participant Updated Successfully"
 			redirect_to participant_path(@participant.id)
 		else
 			render 'edit'
@@ -50,7 +50,7 @@ class ParticipantsController  < ApplicationController
 private
 
 	def participant_params
-		params.require(:participant).permit(:fname, :lname, :address, :city, :state, :zipcode, :email, :sales_area, :discipline, :participant_type, :age, :gender, :ethnicity, :height_ft, :height_in, :weight, :bra_size, :chest, :waist, :low_hip, :high_hip, :inseam, :thigh, :upper_arm, :sleeve_length, :shoe_size, :lf_width, :lf_heel_to_arch, :lf_heel_to_toe, :rf_width, :rf_heel_to_arch, :rf_heel_to_toe, :lh_palm_width_flat, :lh_palm_width_round, :lh_palm_length, :lh_middle_finger, :rh_palm_width_flat, :rh_palm_width_round, :rh_palm_length, :rh_middle_finger)
+		params.require(:participant).permit(:fname, :lname, :address, :city, :state, :zipcode, :email, :sales_area, :discipline, :participant_type, :age, :gender, :ethnicity, :height_ft, :height_in, :weight, :bra_size, :chest, :waist, :low_hip, :high_hip, :inseam, :thigh, :upper_arm, :sleeve_length, :shoe_size, :lf_width, :lf_heel_to_arch, :lf_heel_to_toe, :rf_width, :rf_heel_to_arch, :rf_heel_to_toe, :lh_palm_width_flat, :lh_palm_width_round, :lh_palm_length, :lh_middle_finger, :rh_palm_width_flat, :rh_palm_width_round, :rh_palm_length, :rh_middle_finger, :tops_size, :alpha_bottoms, :numeric_bottoms, :comments)
 	end
 
 

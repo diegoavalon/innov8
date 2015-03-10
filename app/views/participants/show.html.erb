@@ -1,82 +1,8 @@
-<nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-2">
-				<%= link_to image_tag('Innov8_Logo_negative.png'), root_path , :alt => 'Innov8 Logo', class: "dashboard-logo" %>
-			</div>
-			<div class="col-sm-6">
-				<ul class="nav nav-pills">
-					<li><span class="button button--ujarak"><%= link_to 'New Entry', new_participant_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Find/Edit', participants_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Library' %></span></li>
-					<% if current_user.admin? %>
-					<li><span class="button button--ujarak"><%= link_to 'Admin', new_user_path %></span>
-					</li>
-					<% end %>
-				</ul>
-			</div>
-			<div class="col-sm-4">
-				<div class="nav-user-details pull-right">
-					<% if user_signed_in? %>
-					  Welcome &nbsp;<span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
-					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
-					<% end %>
-				</div>
-			</div>
-		</div> <!-- Nav Row END -->
-	</div> <!-- Container Fluid END -->
-</nav>
+<%= render "nav" %>
 
-<section id="profile-overview">
-	<div class="container">
-		<div class="row">
-			<!-- <div class="alert text-center"><%= notice %></div> -->
-			<div class="col-sm-3 col-sm-offset-1">
-				<%= image_tag 'Shirt.png' %>
-			</div>
-			<div class="col-sm-7">
-				<h3>Name:</h3>
-				<h1><%= @participant.fname + " " + @participant.lname %></h1>
-				<h3>Measurements:</h3>
-				<div class="row">
-					<div class="col-sm-4">
-						<div class="panel text-center">
-							<h1>46</h1>
-							<h4>Pants</h4>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="panel text-center">
-							<h1>L</h1>
-							<h4>Shirt</h4>
-						</div>
-					</div>
-					<div class="col-sm-4">
-						<div class="panel text-center">
-							<h1>11</h1>
-							<h4>Shoes</h4>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> <!-- Profile Overview Row END -->
-		<br><br>
-		<div class="row">
-			<div class="col-sm-6">
-				<h2><%= link_to '+ Add Another Entry', new_participant_path %></h2>
-			</div>
-			<div class="col-sm-6">
-				<div class="button-shape pull-right">
-					<br>
-					<%= link_to 'Edit', edit_participant_path(@participant.id) %>
-					<%= link_to 'Delete', participant_path(@participant),
-																								:data => {:confirm => "Are you sure you want to delete this entry?",
-																								:method => "delete"} %>
-				</div>
-			</div>			
-		</div>	<!-- Crud Nav Links END -->
-	</div>
-</section>
+<%= render "footwear" %>
+
+<%= render "crud_nav" %>
 
 <section id="form-summary">
 
@@ -100,6 +26,5 @@
 	$( "#form-summary div" ).addClass( "form-group-default-disabled" );
 	$( "h3" ).css("padding-top", "10px");
 	$( "hr" ).css({"margin-left": "10px", "margin-right": "10px"});
-	// setTimeout( "$('.alert').show();",5000 );
 
 </script>

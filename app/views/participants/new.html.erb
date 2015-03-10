@@ -1,43 +1,17 @@
-<nav>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-2">
-				<%= link_to image_tag('Innov8_Logo_negative.png'), root_path , :alt => 'Innov8 Logo', class: "dashboard-logo" %>
-			</div>
-			<div class="col-sm-6">
-				<ul class="nav nav-pills">
-					<li><span class="button button--ujarak"><%= link_to 'New Entry', new_participant_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Find/Edit', participants_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Library' %></span></li>
-					<% if current_user.admin? %>
-					<li><span class="button button--ujarak"><%= link_to 'Admin', new_user_path %></span>
-					</li>
-					<% end %>
-				</ul>
-			</div>
-			<div class="col-sm-4">
-				<div class="nav-user-details pull-right">
-					<% if user_signed_in? %>
-					  Welcome &nbsp;<span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
-					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
-					<% end %>
-				</div>
-			</div>
-		</div> <!-- Nav Row END -->
-	</div> <!-- Container Fluid END -->
-</nav>
+<%= render "nav" %>
 
 <section id="participant-form" class="center-block">
 
 <%= render "form" %>
 
-	<footer class="page-footer">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<div class="footer mute-grey">
-					<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
-				</div>
+</section>
+
+<footer class="page-footer">
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<div class="footer mute-grey">
+				<p>© 2015 Innov8 Partners, LLC. All rights reserved. Some scary text to prevent unauthorized access or suffer the consequence. dolor sit amet, consectetur adipiscing elit. Ut pretium pretium tempor. Ut eget imperdiet neque.</p>
 			</div>
 		</div>
-	</footer>
-</section>
+	</div>
+</footer>

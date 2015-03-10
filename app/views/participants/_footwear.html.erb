@@ -1,0 +1,39 @@
+<section id="profile-overview">
+	<div class="container">
+		<div class="row">
+			<!-- <div class="alert text-center"><%= notice %></div> -->
+			<div class="col-md-3 col-md-offset-1">
+				<%= image_tag 'footwear.png' %>
+			</div>
+			<div class="col-md-7">
+			<% if notice %>
+				<div class="alert alert-success"><%= notice %></div>
+			<% end %>
+				<h3>Name:</h3>
+				<h1><%= @participant.fname + " " + @participant.lname %></h1>
+				<h3>Measurements:</h3>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel text-center">
+							<h1><%= @participant.tops_size %></h1>
+							<h4>Tops</h4>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel text-center">
+							<h1><%= @participant.alpha_bottoms %></h1>
+							<h4>Alpha Bottoms</h4>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="panel text-center">
+							<h1><%= @participant.numeric_bottoms %></h1>
+							<h4>Num Bottoms</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Profile Overview Row END -->
+		<br><br>
+	</div>
+</section>
