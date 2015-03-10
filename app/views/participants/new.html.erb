@@ -14,7 +14,7 @@
 			<div class="col-sm-5">
 				<div class="nav-user-details pull-right">
 					<% if user_signed_in? %>
-					  Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
+					  Logged in as, <span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
 					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
 					<% end %>
 				</div>

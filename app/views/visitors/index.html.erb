@@ -14,7 +14,7 @@
 			<div class="col-sm-5">
 				<div class="nav-user-details pull-right">
 					<% if user_signed_in? %>
-					  Logged in as <span style="text-decoration: underline; font-family: 'Open Sans', sans-serif; font-weight: light;"><%= current_user.email %></span>
+					  Welcome <span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
 					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
 					<% end %>
 				</div>
@@ -23,6 +23,9 @@
 
 		<section id="dashboard">
 			<div class="row row-centered">
+			<% if alert %>
+				<div class="alert alert-danger"><%= alert %></div>
+			<% end %>
 				<div class="col-md-3 col-centered">
 					<div class="panel center-block">
 						<figure>

@@ -14,7 +14,7 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'simple_form'
 gem 'ransack'
-gem 'attribute_normalizer'
+gem 'pundit'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 group :development do

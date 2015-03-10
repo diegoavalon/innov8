@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails innov8: development" uuid="4bf37dd3-396e-4479-bd12-57d10e2ad21e">
+      <schema-pattern>innov8_development.*</schema-pattern>
+      <default-schemas>innov8_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails innov8: test" uuid="b98248a4-6803-41ca-88fc-54255060919c">
+      <schema-pattern>innov8_test.*</schema-pattern>
+      <default-schemas>innov8_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails innov8: production" uuid="6e92af38-ac44-4e1f-bcef-3374bc700694">
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>

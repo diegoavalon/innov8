@@ -28,12 +28,12 @@
 						</div>
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :state, class: 'form-control' %>
+								<%= f.input :state, class: 'form-control', input_html: { maxlength: 2 } %>
 							</div>
 						</div>
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :zipcode, class: 'form-control' %>
+								<%= f.input :zipcode, class: 'form-control', input_html: { :min => 0 , :max => 99 } %>
 							</div>
 						</div>
 					</div>
@@ -102,12 +102,12 @@
 					<div class="row">
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :height_ft, class: 'form-control' %>
+								<%= f.input :height_ft, collection: 3..7, class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :height_in, class: 'form-control' %>
+								<%= f.input :height_in, collection: 1..11, class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-xs-6">
@@ -119,7 +119,7 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="form-group form-group-default">
-								<%= f.input :alpha_bottoms, class: 'form-control' %>
+								<%= f.input :alpha_bottoms, collection: ['XS', 'SM', 'M', 'L', 'XL', 'XXL'] ,class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-xs-6">
@@ -131,7 +131,7 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="form-group form-group-default">
-								<%= f.input :tops_size, class: 'form-control' %>
+								<%= f.input :tops_size, collection: ['XS', 'SM', 'M', 'L', 'XL', 'XXL', '3XL', '4XL', '5XL'], class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-xs-6">
@@ -149,22 +149,22 @@
 				<div class="form-wrapper">
 					<h3>Background</h3>
 					<div class="form-group form-group-default">
-						<%= f.input :participant_type %>
+						<%= f.input :participant_type, collection: ['Employee', 'Volunteer'] %>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="form-group form-group-default">
-								<%= f.input :ethnicity %>
+								<%= f.input :ethnicity, collection: ['White', 'Hispanic or Latino', 'Black or African American', 'Native American or American Indian', 'Asian', 'Pacific Islander', 'Other'] %>
 							</div>
 						</div>
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :gender %>									
+								<%= f.input :gender, collection: ['Male', 'Female'] %>									
 							</div>
 						</div>
 						<div class="col-xs-3">
 							<div class="form-group form-group-default">
-								<%= f.input :age %>									
+								<%= f.input :age, input_html: { min: 1, max: 99 } %>									
 							</div>
 						</div>
 					</div>

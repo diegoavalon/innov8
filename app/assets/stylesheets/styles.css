@@ -23,6 +23,14 @@ a {
 a:hover {
 	text-decoration: none;
 }
+
+.form-group-default.input-group .input-group-addon {
+  height: calc(50px);
+  min-width: calc(50px);
+  border-radius: 0;
+  border: none;
+}
+
 /*  Login Page START  */
 
 #login {
@@ -31,10 +39,6 @@ a:hover {
 
 #new-password {
 	padding-top: 230px;
-}
-
-.alert {
-	color: #f55753;
 }
 
 .login-img {
@@ -98,7 +102,7 @@ label {
 
 /*  User Edit */
 
-#edit-user {
+#edit-user, #create-user {
 	padding-top: 60px;
 }
 

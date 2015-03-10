@@ -1,19 +1,35 @@
-<div class="container">
-	<h2>Sign up</h2>
+<!-- <section id="create-user">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h2 class="text-center">Create New User</h2>
+				<% if 1 === 1 %>
+					<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+					<%= f.error_notification %>
 		
-		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		  <%= f.error_notification %>
-		
-		  <div class="form-inputs">
-		    <%= f.input :email, required: true, autofocus: true %>
-		    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
-		    <%= f.input :password_confirmation, required: true %>
-		  </div>
-		
-		  <div class="form-actions">
-		    <%= f.button :submit, "Sign up" %>
-		  </div>
-		<% end %>
-		
-		<%= render "devise/shared/links" %>
-</div>
+					<div class="form-inputs">
+						<%= f.input :fname %>
+						<%= f.input :lname %>
+						<%= f.input :email, required: true, autofocus: true %>
+						<%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable) %>
+						<%= f.input :password_confirmation, required: true %>
+						<%= f.input :admin, as: :select ,inline_label: 'Full-Access (Developers Only)' %>
+						<%= f.input :apparel, as: :select %>
+						<%= f.input :footwear, as: :select %>
+						<%= f.input :gloves, as: :select %>
+					</div>
+					<br>
+					<div class="form-actions">
+						<%= f.button :submit, "Sign up" %>
+					</div>
+					<% end %>
+				<% else %>
+					You are not authorized. Please Return.
+				<% end %>	
+				<br>
+				<%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>
+</section>
+ -->
