@@ -1,8 +1,24 @@
 <%= render "nav" %>
 
-<%= render "gloves" %>
+<%= render "quickview" %>
 
-<%= render "crud_nav" %>
+<section id="crud-nav">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<h2><%= link_to '← Search ', :back %> | <%= link_to ' + Add Another Entry', new_participant_path %></h2>
+			</div>
+			<div class="col-sm-6">
+				<div class="button-shape pull-right">
+					<br>
+					<%= link_to 'Delete Entry', participant_path(@participant),
+																								:data => {:confirm => "Are you sure you want to delete this entry?",
+																								:method => "delete"} %>
+				</div>
+			</div>			
+		</div>	<!-- Crud Nav Links END -->
+	</div>
+</section>
 
 <section id="form-summary">
 

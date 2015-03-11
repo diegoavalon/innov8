@@ -12,7 +12,7 @@ class RenameColumnInParticipants < ActiveRecord::Migration
   	change_column :participants, :rh_palm_width_flat, :float
   	change_column :participants, :rh_palm_width_round, :float
   	change_column :participants, :rh_palm_length, :float
-  	change_column :participants, :lh_middle_finger, :float
-  	change_column :participants, :rh_middle_finger, :float
+  	change_column :participants, :lh_middle_finger, :decimal
+  	change_column :participants, :rh_middle_finger, :decimal
   end
 end

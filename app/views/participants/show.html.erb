@@ -1,12 +1,6 @@
 <%= render "nav" %>
 
-<% if current_user.gloves? %>
-	<%= render "gloves" %>
-<% elsif current_user.footwear? %>
-	<%= render "footwear" %>
-<% else %>
-	<%= render "apparel" %>
-<% end %>
+<%= render "quickview" %>
 
 <%= render "crud_nav" %>
 

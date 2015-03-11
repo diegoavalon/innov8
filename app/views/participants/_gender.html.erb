@@ -1,0 +1,7 @@
+<% if @participant.gender === "Male" %>
+	<%= image_tag 'male.png' %>
+<% elsif @participant.gender === "Female" %>
+	<%= image_tag 'female.png' %>
+<% else %>
+	<%= image_tag 'furby.png'	%>
+<% end %>

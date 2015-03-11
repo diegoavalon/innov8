@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   root 'visitors#index'
   
-  resources :users, only: [:index, :new, :create]
+  resources :users, only: [:new, :create]
   resources :participants
 
 
