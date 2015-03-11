@@ -3,7 +3,7 @@
 		<div class="row">
 			<!-- <div class="alert text-center"><%= notice %></div> -->
 			<div class="col-md-3 col-md-offset-2">
-				<%= image_tag 'footwear.png' %>
+				<%= image_tag 'tactical.png' %>
 			</div>
 			<div class="col-md-6">
 			<% if notice %>
@@ -16,27 +16,23 @@
 					<div class="col-md-4">
 						<div class="panel text-center">
 							<h1>
-								<% if @participant.lf_heel_to_toe != @participant.rf_heel_to_toe %>
-									<%= @participant.lf_heel_to_toe.to_s + " | " + @participant.rf_heel_to_toe.to_s %>
-								<% else %>
-									<%= @participant.lf_heel_to_toe %>
-								<% end %>
+								<%= @participant.lh_glove_size %>
 							</h1>
-							<h4>Shoe Size</h4>
+							<% if @participant.lh_glove_size === @participant.rh_glove_size %> 
+							<h4>Glove Size</h4>
+							<% else %>
+							<h4>Left Glove</h4>
+							<% end %>
 						</div>
 					</div>
+					<% if @participant.lh_glove_size != @participant.rh_glove_size %>
 					<div class="col-md-4">
 						<div class="panel text-center">
-							<h1>
-								<% if @participant.lf_width != @participant.rf_width %>
-									<%= @participant.lf_width.to_s + " | " + @participant.rf_width.to_s %>
-								<% else %>
-									<%= @participant.lf_width %>
-								<% end %>
-							</h1>
-							<h4>Shoe Width</h4>
+							<h1><%= @participant.rh_glove_size %></h1>
+							<h4>Right Glove</h4>
 						</div>
 					</div>
+					<% end %>
 				</div>
 			</div>
 		</div> <!-- Profile Overview Row END -->
