@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305192640) do
+ActiveRecord::Schema.define(version: 20150311202954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,20 +101,20 @@ ActiveRecord::Schema.define(version: 20150305192640) do
     t.integer  "upper_arm"
     t.integer  "sleeve_length"
     t.integer  "shoe_size"
-    t.integer  "lf_width"
-    t.integer  "lf_heel_to_arch"
-    t.integer  "lf_heel_to_toe"
-    t.integer  "rf_width"
-    t.integer  "rf_heel_to_arch"
-    t.integer  "rf_heel_to_toe"
-    t.integer  "lh_palm_width_flat"
-    t.integer  "lh_palm_width_round"
-    t.integer  "lh_palm_length"
-    t.integer  "lh_middle_finger"
-    t.integer  "rh_palm_width_flat"
-    t.integer  "rh_palm_width_round"
-    t.integer  "rh_palm_length"
-    t.integer  "rh_middle_finger"
+    t.string   "lf_width"
+    t.float    "lf_heel_to_arch"
+    t.float    "lf_heel_to_toe"
+    t.string   "rf_width"
+    t.float    "rf_heel_to_arch"
+    t.float    "rf_heel_to_toe"
+    t.float    "lh_palm_width_flat"
+    t.float    "lh_palm_width_round"
+    t.float    "lh_palm_length"
+    t.float    "lh_middle_finger"
+    t.float    "rh_palm_width_flat"
+    t.float    "rh_palm_width_round"
+    t.float    "rh_palm_length"
+    t.float    "rh_middle_finger"
     t.string   "tops_size"
     t.string   "alpha_bottoms"
     t.integer  "numeric_bottoms"
