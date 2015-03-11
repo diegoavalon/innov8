@@ -15,20 +15,26 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="panel text-center">
-							<h1><%= @participant.tops_size %></h1>
-							<h4>Tops</h4>
+							<h1>
+								<% if @participant.lf_heel_to_toe != @participant.rf_heel_to_toe %>
+									<%= @participant.lf_heel_to_toe.to_s + " | " + @participant.rf_heel_to_toe.to_s %>
+								<% else %>
+									<%= @participant.lf_heel_to_toe %>
+								<% end %>
+							</h1>
+							<h4>Shoe Size</h4>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="panel text-center">
-							<h1><%= @participant.alpha_bottoms %></h1>
-							<h4>Alpha Bottoms</h4>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="panel text-center">
-							<h1><%= @participant.numeric_bottoms %></h1>
-							<h4>Num Bottoms</h4>
+							<h1>
+								<% if @participant.lf_width != @participant.rf_width %>
+									<%= @participant.lf_width.to_s + " | " + @participant.rf_width.to_s %>
+								<% else %>
+									<%= @participant.lf_width %>
+								<% end %>
+							</h1>
+							<h4>Shoe Width</h4>
 						</div>
 					</div>
 				</div>
