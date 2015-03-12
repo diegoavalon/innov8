@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   root 'visitors#index'
+  get '/library', to: 'visitors#library', as: :library_page
   
   resources :users, only: [:new, :create]
   resources :participants

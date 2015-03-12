@@ -8,7 +8,7 @@
 				<ul class="nav nav-pills">
 					<li><span class="button button--ujarak"><%= link_to 'New Entry', new_participant_path %></span></li>
 					<li><span class="button button--ujarak"><%= link_to 'Find/Edit', participants_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Library' %></span></li>
+					<li><span class="button button--ujarak"><%= link_to 'Library', library_page_path %></span></li>
 					<% if current_user.admin? %>
 					<li><span class="button button--ujarak"><%= link_to 'Admin', new_user_path %></span>
 					</li>
@@ -18,7 +18,7 @@
 			<div class="col-sm-4">
 				<div class="nav-user-details pull-right">
 					<% if user_signed_in? %>
-					  Welcome &nbsp;<span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
+					  Logged in as, &nbsp;<span style="font-family: 'Open Sans', sans-serif; font-weight: bold;"><%= current_user.fname + " " + current_user.lname %></span>
 					  <span class="logout-link"><%= link_to "Logout", destroy_user_session_path, method: :delete %></span>
 					<% end %>
 				</div>

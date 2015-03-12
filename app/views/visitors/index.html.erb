@@ -8,7 +8,7 @@
 				<ul class="nav nav-pills">
 					<li><span class="button button--ujarak"><%= link_to 'New Entry', new_participant_path %></span></li>
 					<li><span class="button button--ujarak"><%= link_to 'Find/Edit', participants_path %></span></li>
-					<li><span class="button button--ujarak"><%= link_to 'Library' %></span></li>
+					<li><span class="button button--ujarak"><%= link_to 'Library', library_page_path %></span></li>
 					<% if current_user.admin? %>
 					<li><span class="button button--ujarak"><%= link_to 'Admin', new_user_path %></span>
 					</li>
@@ -39,7 +39,7 @@
 						<div class="panel center-block">
 							<figure>
 							<%= image_tag 'girl_ICON.png', class: "center-block" %>
-								<figcaption class="text-center">
+								<figcaption class="text-center cl-effect-3">
 									<h2><%= link_to 'New Entry', new_participant_path %></h2>
 								</figcaption>
 							</figure>
@@ -49,7 +49,7 @@
 						<div class="panel center-block">
 							<figure>
 							<%= image_tag 'edit_ICON.png', class: "center-block" %>
-								<figcaption class="text-center">
+								<figcaption class="text-center cl-effect-3">
 									<h2><%= link_to 'Find/Edit', participants_path %></h2>
 								</figcaption>
 							</figure>
@@ -59,8 +59,8 @@
 						<div class="panel center-block">
 							<figure>
 							<%= image_tag 'library_ICON.png', class: "center-block" %>
-								<figcaption class="text-center">
-									<h2>Library</h2>
+								<figcaption class="text-center cl-effect-3">
+									<h2><%= link_to 'Library' %></h2>
 								</figcaption>
 							</figure>
 						</div>

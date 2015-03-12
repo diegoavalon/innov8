@@ -5,4 +5,6 @@ class VisitorsController < ApplicationController
 	def index
 	end
 
+	def library
+	end
 end
