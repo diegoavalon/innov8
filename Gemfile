@@ -12,10 +12,12 @@ gem 'bcrypt', '~> 3.1.5'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'devise'
+gem 'pundit'
 gem 'simple_form'
 gem 'ransack'
-gem 'pundit'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'faker'
+gem 'kaminari'
 
 group :development do
     gem 'better_errors'
@@ -29,11 +31,11 @@ group :test, :development do
     gem 'launchy'
     gem 'rest-client'
     gem 'dotenv-rails'
+    gem 'factory_girl_rails'
 end
 
 group :test do
     gem 'shoulda-matchers'
-    gem 'factory_girl_rails'
     gem 'capybara'
     gem 'webmock'
 end

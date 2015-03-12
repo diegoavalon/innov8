@@ -4,7 +4,7 @@ class ParticipantsController  < ApplicationController
 
 	def index
 		@search = Participant.search(params[:q])
-		@participants = @search.result  
+		@participants = @search.result.page(params[:page])  
 	end
 
 	def new
