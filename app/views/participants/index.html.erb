@@ -38,14 +38,14 @@
 				            <th><%= sort_link @search, :city, "City" %></th>
 				            <th><%= sort_link @search, :state, "State" %></th>
 				            <th><%= sort_link @search, :email, "Email" %></th>
-				            <th><%= sort_link @search, :phone, "Phone" %></th>
+				            <th>Profile</th>
 				        </tr>
 				    </thead>
 
 				    <% @participants.each do |participant| %>
 				    <tbody>
 				        <tr>
-				            <td><%= link_to "#{participant.fname + ' ' + participant.lname}", participant_path(participant.id) %></td>
+				            <td><%= participant.fname + " " + participant.lname %></td>
 				            <td><%= participant.participant_type %></td>
 				            <td><%= participant.city %></td>
 				            <td><%= participant.state %></td>
