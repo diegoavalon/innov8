@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150316171608) do
+ActiveRecord::Schema.define(version: 20150317201105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,14 +92,14 @@ ActiveRecord::Schema.define(version: 20150316171608) do
     t.integer  "foot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "chest"
-    t.integer  "waist"
-    t.integer  "low_hip"
-    t.integer  "high_hip"
-    t.integer  "inseam"
-    t.integer  "thigh"
-    t.integer  "upper_arm"
-    t.integer  "sleeve_length"
+    t.string   "chest"
+    t.string   "waist"
+    t.string   "low_hip"
+    t.string   "high_hip"
+    t.string   "inseam"
+    t.string   "thigh"
+    t.string   "upper_arm"
+    t.string   "sleeve_length"
     t.integer  "shoe_size"
     t.string   "lf_width"
     t.float    "lf_heel_to_arch"

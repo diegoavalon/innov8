@@ -388,6 +388,10 @@ background-color: #626262;
 	text-transform: uppercase;
 }
 
+#gloves h5 {
+	padding-top: 14px;
+}
+
 .string-styling {
 	text-transform: capitalize;
 }
