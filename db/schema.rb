@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311202954) do
+ActiveRecord::Schema.define(version: 20150316171608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20150311202954) do
     t.string   "state"
     t.integer  "zipcode"
     t.string   "email"
-    t.string   "sales_area"
+    t.string   "area"
     t.string   "discipline"
     t.string   "participant_type"
     t.integer  "age"
@@ -119,6 +119,12 @@ ActiveRecord::Schema.define(version: 20150311202954) do
     t.string   "alpha_bottoms"
     t.integer  "numeric_bottoms"
     t.text     "comments"
+    t.string   "phone"
+    t.integer  "stated_height_ft"
+    t.integer  "stated_height_in"
+    t.integer  "stated_pants_waist"
+    t.integer  "stated_pants_length"
+    t.integer  "stated_weight"
   end
 
   create_table "users", force: :cascade do |t|

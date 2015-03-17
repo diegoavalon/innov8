@@ -22,10 +22,28 @@ class ParticipantsController  < ApplicationController
 	end
 
 	def show
+		@xxs = "7–7.4"
+		@xs = "7.5–7.8"
+		@s = "7.9–8.2"
+		@m = "8.3–8.6" 
+		@l = "8.7–9.0" 
+		@xl = "9.1–9.2" 
+		@xxl = "9.5–9.8" 
+		@xxxl = "9.9–10.3"
+
 		@participant = Participant.find(params[:id])
 	end
 
 	def edit
+		@xxs = "7–7.4"
+		@xs = "7.5–7.8"
+		@s = "7.9–8.2"
+		@m = "8.3–8.6" 
+		@l = "8.7–9.0" 
+		@xl = "9.1–9.2" 
+		@xxl = "9.5–9.8" 
+		@xxxl = "9.9–10.3"
+		
 		@participant = Participant.find(params[:id])
 	end
 
@@ -43,7 +61,7 @@ class ParticipantsController  < ApplicationController
 	def destroy
 		@participant = Participant.find(params[:id])
 		@participant.destroy
-		flash[:notice] = "Contact deleted."
+		flash[:notice] = "Participant Successfully Deleted."
 		redirect_to new_participant_path
 	end
 

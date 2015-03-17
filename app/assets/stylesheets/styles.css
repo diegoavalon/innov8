@@ -13,7 +13,6 @@ h1, h2, h3, h4, h5, h6 {
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-	
 }
 
 ol, ul {
@@ -401,12 +400,17 @@ background-color: #626262;
 	padding: 0 20px 15px 20px;
 }
 
+.form-wrapper h3 {
+	padding-top: 0 !important;
+}
+
 .page-footer {
 	padding-top: 80px;
 }
 
 .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
-color: #A0A0A0;
+	background: inherit;
+	color: #A0A0A0;
 }
 
 .form-group-default-disabled {

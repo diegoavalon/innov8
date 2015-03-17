@@ -37,8 +37,37 @@
 							</div>
 						</div>
 					</div>
-					<div class="form-group form-group-default">
-						<%= f.input :email, as: :email, class: 'form-control' %>
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :phone, class: 'form-control' %>
+							</div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group form-group-default">
+								<%= f.input :email, as: :email, class: 'form-control' %>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-xs-3">
+							<%= f.input :stated_height_ft, class: 'form-control' %>
+						</div>
+						<div class="col-xs-3">
+							<%= f.input :stated_height_in, class: 'form-control' %>
+						</div>
+						<div class="col-xs-6">
+							<%= f.input :stated_weight %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<%= f.input :stated_pants_waist %>
+						</div>
+						<div class="col-xs-6">
+							<%= f.input :stated_pants_length %>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -152,7 +181,7 @@
 				<div class="form-wrapper">
 					<h3>Background</h3>
 					<div class="form-group form-group-default">
-						<%= f.input :participant_type, collection: ['Employee', 'Volunteer'] %>
+						<%= f.input :participant_type, collection: ['Employee', 'Contact', 'PDM/Volunteer'] %>
 					</div>
 					<div class="row">
 						<div class="col-xs-6">
@@ -172,10 +201,13 @@
 						</div>
 					</div>
 					<div class="form-group form-group-default">
-						<%= f.input :sales_area %>
+						<%= f.input :area %>
 					</div>
 					<div class="form-group form-group-default">
-						<%= f.input :discipline %>
+						<%= f.input :discipline,
+							as: :grouped_select,
+							:collection => [['Noble Outfitters', ['Western', 'English']], ['First Tactical', ['Police', 'Fire', 'EMS']]],
+							:group_method => :last %>
 					</div>
 				</div>
 			</div>
@@ -184,55 +216,153 @@
 			<div class="panel panel-form center-block">
 				<div class="form-wrapper">
 					<h3>Hands</h3>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :lh_palm_width_flat, class: 'form-control' %>
+
+					<% if @participant.lh_palm_width_flat? %>
+					
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.lh_palm_width_flat * 2.54).round(1) %> cm.
+								</h5>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_round, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.lh_palm_width_round * 2.54).round(1) %> cm.
+								</h5>
 							</div>
 						</div>
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :lh_palm_width_round, class: 'form-control' %>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.lh_palm_length * 2.54).round(1) %> cm.
+								</h5>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_middle_finger, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.lh_middle_finger * 2.54).round(1) %> cm.
+								</h5>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :lh_palm_length, class: 'form-control' %>
+						<hr>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.rh_palm_width_flat * 2.54).round(1) %> cm.
+								</h5>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_round, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.rh_palm_width_round * 2.54).round(1) %> cm.
+								</h5>
 							</div>
 						</div>
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :lh_middle_finger, class: 'form-control' %>
+						<div class="row">
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.rh_palm_length * 2.54).round(1) %> cm.
+								</h5>
+							</div>
+							<div class="col-xs-4">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_middle_finger, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-2">
+								<h5 class="text-center">
+									<%= (@participant.rh_middle_finger * 2.54).round(1) %> cm. 
+								</h5>
 							</div>
 						</div>
-					</div>
-					<hr>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :rh_palm_width_flat, class: 'form-control' %>
+					
+					<% else %>
+
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_width_round, class: 'form-control' %>
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :rh_palm_width_round, class: 'form-control' %>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :lh_middle_finger, class: 'form-control' %>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :rh_palm_length, class: 'form-control' %>
+						<hr>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_flat, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_width_round, class: 'form-control' %>
+								</div>
 							</div>
 						</div>
-						<div class="col-xs-6">
-							<div class="form-group form-group-default">
-								<%= f.input :rh_middle_finger, class: 'form-control' %>
+						<div class="row">
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_palm_length, class: 'form-control' %>
+								</div>
+							</div>
+							<div class="col-xs-6">
+								<div class="form-group form-group-default">
+									<%= f.input :rh_middle_finger, class: 'form-control' %>
+								</div>
 							</div>
 						</div>
-					</div>
+
+					<% end %>
+
 				</div>
 			</div>
 		</section>
@@ -244,7 +374,7 @@
 					<div class="row">
 						<div class="col-xs-4">
 							<div class="form-group form-group-default">
-								<%= f.input :lf_width, collection: ['4A', '3A', '2A', 'A', 'B', 'C', 'D', 'E', '2E', '3E'], class: 'form-control' %>
+								<%= f.input :lf_heel_to_toe, class: 'form-control' %>
 							</div>
 						</div>
 						<div class="col-xs-4">
@@ -254,16 +384,16 @@
 						</div>
 						<div class="col-xs-4">
 							<div class="form-group form-group-default">
-								<%= f.input :lf_heel_to_toe, class: 'form-control' %>
+								<%= f.input :lf_width, collection: ['4A', '3A', '2A', 'A', 'B', 'C', 'D', 'E', '2E', '3E'], class: 'form-control' %>
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row">						
 						<div class="col-xs-4">
 							<div class="form-group form-group-default">
-								<%= f.input :rf_width, collection: ['4A', '3A', '2A', 'A', 'B', 'C', 'D', 'E', '2E', '3E'], class: 'form-control' %>
+								<%= f.input :rf_heel_to_toe, class: 'form-control' %>
 							</div>
-						</div>						
+						</div>
 						<div class="col-xs-4">
 							<div class="form-group form-group-default">
 								<%= f.input :rf_heel_to_arch, class: 'form-control' %>
@@ -271,7 +401,7 @@
 						</div>
 						<div class="col-xs-4">
 							<div class="form-group form-group-default">
-								<%= f.input :rf_heel_to_toe, class: 'form-control' %>
+								<%= f.input :rf_width, collection: ['4A', '3A', '2A', 'A', 'B', 'C', 'D', 'E', '2E', '3E'], class: 'form-control' %>
 							</div>
 						</div>
 					</div>
@@ -295,7 +425,7 @@
 </div> <!-- Form Container END -->
 <% end %>
 
-<% if current_user.footwear != true %>
+<% if current_user.footwear != true && current_user.admin != true %>
 	<script>
 		$( "#footwear :input" ).prop( "disabled", true );
 		$( "#footwear :input" ).text( )
@@ -306,7 +436,7 @@
 	</script>
 <% end %>
 
-<% if current_user.gloves != true %>
+<% if current_user.gloves != true && current_user.admin != true %>
 	<script>
 		$( "#gloves :input" ).prop( "disabled", true );
 		$( "#gloves :input" ).text( )
@@ -317,7 +447,7 @@
 	</script>
 <% end %>
 
-<% if current_user.apparel != true %>
+<% if current_user.apparel != true && current_user.admin != true %>
 	<script>
 		$( "#apparel :input" ).prop( "disabled", true );
 		$( "#apparel :input" ).text( )
