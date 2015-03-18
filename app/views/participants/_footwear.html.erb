@@ -2,10 +2,10 @@
 	<div class="container">
 		<div class="row">
 			<!-- <div class="alert text-center"><%= notice %></div> -->
-			<div class="col-md-3 col-md-offset-2">
+			<div class="col-md-3 col-md-offset-1">
 				<%= render "gender" %>
 			</div>
-			<div class="col-md-6">
+			<div class="col-md-7">
 			<% if notice %>
 				<div class="alert alert-success"><%= notice %></div>
 			<% end %>
@@ -14,7 +14,7 @@
 				<h3>Measurements:</h3>
 				<div class="row">
 					<div class="col-md-4">
-						<div style="background: #F5F5F5; border: 1px solid #222;" class="panel text-center">
+						<div class="panel text-center">
 							<h1><%= @participant.stated_shoe_size if @participant.stated_shoe_size? %></h1>
 							<h4>Stated Size</h4>
 						</div>

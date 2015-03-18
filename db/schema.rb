@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317231633) do
+ActiveRecord::Schema.define(version: 20150318161818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150317231633) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "chest"
-    t.string   "waist"
+    t.string   "natural_waist"
     t.string   "low_hip"
     t.string   "high_hip"
     t.string   "inseam"
@@ -123,9 +123,10 @@ ActiveRecord::Schema.define(version: 20150317231633) do
     t.integer  "stated_height_ft"
     t.integer  "stated_height_in"
     t.integer  "stated_pants_waist"
-    t.integer  "stated_pants_length"
+    t.integer  "stated_pants_inseam"
     t.integer  "stated_weight"
     t.float    "stated_shoe_size"
+    t.string   "pant_waist"
   end
 
   create_table "users", force: :cascade do |t|
