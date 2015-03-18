@@ -51,22 +51,25 @@
 					</div>
 					<hr>
 					<div class="row">
-						<div class="col-xs-3">
-							<%= f.input :stated_height_ft, class: 'form-control' %>
+						<div class="col-xs-4">
+							<%= f.input :stated_height_ft, collection: 3..7, class: 'form-control' %>
 						</div>
-						<div class="col-xs-3">
-							<%= f.input :stated_height_in, class: 'form-control' %>
+						<div class="col-xs-4">
+							<%= f.input :stated_height_in, collection: 1..11, class: 'form-control' %>
 						</div>
-						<div class="col-xs-6">
+						<div class="col-xs-4">
 							<%= f.input :stated_weight %>
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-xs-4">
 							<%= f.input :stated_pants_waist %>
 						</div>
-						<div class="col-xs-6">
+						<div class="col-xs-4">
 							<%= f.input :stated_pants_length %>
+						</div>
+						<div class="col-xs-4">
+							<%= f.input :stated_shoe_size %>
 						</div>
 					</div>
 				</div>

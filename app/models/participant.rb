@@ -12,7 +12,7 @@ class Participant < ActiveRecord::Base
 	  self.city.capitalize!
 	  self.state.upcase!
 	  self.email.downcase!
-	  self.area.capitalize!
+	  # self.area.capitalize!
 	  self.discipline.capitalize!
 	end
 
