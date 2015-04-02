@@ -5,7 +5,7 @@
 			<div class="col-md-3 col-md-offset-2">
 				<%= render "gender" %>
 			</div>
-			<div class="col-md-7">
+			<div class="col-md-6">
 			<% if notice %>
 				<div class="alert alert-success"><%= notice %></div>
 			<% end %>
@@ -14,43 +14,28 @@
 				<h3>Measurements:</h3>
 				<div class="row">
 					<div class="col-md-4">
-
-							<% if @participant.lh_middle_finger? %>
-
 						<div style="padding-bottom: 5px;" class="panel text-center">
-							
-								<h1><%= (@participant.lh_middle_finger * 2.54).round(1) %></h1>
-								<p><%= @participant.lh_glove_range %></p>
-								<hr>
-								<h1><%= @participant.lh_glove_size %></h1>
-
-								<% if @participant.rh_middle_finger? && @participant.lh_glove_size === @participant.rh_glove_size %> 
-									<h5>Glove Size</h5>
-								<% else %>
-									<h5>Left Glove</h5>
-								<% end %>
+							<h1><%= @participant.lh_middle_finger * 2.54.round(1) if @participant.lh_middle_finger? %></h1>
+							<p><%= @participant.lh_glove_range %></p>
+							<hr>
+							<h1><%= @participant.lh_glove_size %></h1>
+							<% if @participant.lh_glove_size === @participant.rh_glove_size %> 
+							<h5>Glove Size</h5>
+							<% else %>
+							<h5>Left Glove</h5>
 							<% end %>
-
 						</div>
 					</div>
-
-					<% if @participant.rh_middle_finger? %>
-						
-						<div class="col-md-4">
-							<div style="padding-bottom: 5px;" class="panel text-center">
-								<h1><%= (@participant.rh_middle_finger * 2.54).round(1) %></h1>
-								<p><%= @participant.rh_glove_range %></p>
-								<hr>
-								<h1><%= @participant.rh_glove_size %></h1>
-								<h5>Right Glove</h5>
-							</div>
+					<% if @participant.lh_glove_size != @participant.rh_glove_size %>
+					<div class="col-md-4">
+						<div style="padding-bottom: 5px;" class="panel text-center">
+							<h1><%= @participant.rh_middle_finger * 2.54.round(1) if @participant.rh_middle_finger? %></h1>
+							<p><%= @participant.rh_glove_range %></p>
+							<hr>
+							<h1><%= @participant.rh_glove_size %></h1>
+							<h5>Right Glove</h5>
 						</div>
-
-						<% if @participant.lh_middle_finger? && @participant.rh_middle_finger? && @participant.lh_glove_size != @participant.rh_glove_size %>
-						
-
-						<% end %>  
-							
+					</div>
 					<% end %>
 				</div>
 			</div>
