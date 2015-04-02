@@ -92,7 +92,7 @@ label {
 	margin: 0;
 }
 
-#login .btn, #new-password .btn, #participant-form .btn, #form-summary .btn, .quick-search-btn {
+#login .btn, #new-password .btn, #participant-form .btn, #form-summary .btn {
 	/* button_box: */
 	background: #FCAF3C;
 	border-radius: 2px;
@@ -481,9 +481,38 @@ background-color: #626262;
 	padding-top: 80px;
 }
 
-#search input {
+#search input, #search select {
 	border: 0;
-	width: 100%;
+	margin-bottom: 10px;
+}
+
+#search input {
+	width: 220px;
+	height: 35px;
+}
+
+#search select {
+	margin-right: 10px;
+	height: 35px;
+}
+
+#search .quick-search-btn {
+	/* button_box: */
+	background: #FCAF3C;
+	border-radius: 2px;
+	border: none;
+	margin-top: 30px;
+	/* SIGN IN: */
+	font-family: Montserrat-Bold;
+	font-size: 18px;
+	text-transform: uppercase;
+	padding: 0px 30px !important;
+	color: #F5F5F5;
+	letter-spacing: 0.7px;
+	line-height: 21px;
+	-webkit-transition: all 7s !important;
+  -moz-transition: all 0.7s !important;
+  transition: all 0.7s !important;
 }
 
 #search-results {

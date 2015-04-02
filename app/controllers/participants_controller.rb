@@ -4,7 +4,13 @@ class ParticipantsController  < ApplicationController
 
 	def index
 		@search = Participant.search(params[:q])
-		@participants = @search.result.page(params[:page])  
+		@participants = @search.result.page(params[:page])
+		@search.build_condition  
+	end
+
+	def search
+		index
+		render :index
 	end
 
 	def new
@@ -70,6 +76,5 @@ private
 	def participant_params
 		params.require(:participant).permit(:fname, :lname, :address, :city, :state, :zipcode, :email, :sales_area, :discipline, :participant_type, :age, :gender, :ethnicity, :height_ft, :height_in, :weight, :bra_size, :chest, :natural_waist, :low_hip, :high_hip, :inseam, :thigh, :upper_arm, :sleeve_length, :shoe_size, :lf_width, :lf_heel_to_arch, :lf_heel_to_toe, :rf_width, :rf_heel_to_arch, :rf_heel_to_toe, :lh_palm_width_flat, :lh_palm_width_round, :lh_palm_length, :lh_middle_finger, :rh_palm_width_flat, :rh_palm_width_round, :rh_palm_length, :rh_middle_finger, :tops_size, :alpha_bottoms, :numeric_bottoms, :comments, :phone, :stated_shoe_size, :stated_height_ft, :stated_height_in, :stated_pants_waist, :stated_pants_inseam, :stated_weight, :pant_waist)
 	end
-
 
 end

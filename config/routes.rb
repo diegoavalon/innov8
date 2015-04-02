@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   get '/library', to: 'visitors#library', as: :library_page
   
   resources :users, only: [:new, :create]
-  resources :participants
+  # resources :participants
 
+  resources :participants do
+    collection do
+      match 'search' => 'participants#search', via: [:get, :post], as: :search
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

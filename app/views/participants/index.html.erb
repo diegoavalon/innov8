@@ -3,24 +3,37 @@
 <section id="search">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
-				<h1 class="text-center">Quick Search</h1>
+			<div class="col-xs-8 col-xs-offset-2">
+				<div class="text-center">
+					<h1>Quick Search</h1>
+					<h5 style="opacity: 0.5; font-weight: normal">Set as many conditions as your heart desires. <br>Get back exactly the results you need.</h5>
+				</div>
 				<br>
-				<%= search_form_for @search do |f| %>
-				<div class="form-group form-group-default">
-					<%= f.label :fname_or_lname_or_email_or_city_or_state_or_email_cont, "Search by Name, Email, or Location" %>
-					<%= f.text_field :fname_or_lname_or_email_or_city_or_state_or_email_cont %>
-				</div>
-				<div class="button-main">
-					<p style="padding-top: 10px; padding-bottom: 10px;" class="text-center"><%= link_to "+ Advanced Search" %></p>
-					<br>
-					<%= f.submit "Search", class: "quick-search-btn" %>
-				</div>
+
+				<div class="text-center">
+					<%= search_form_for @search, url: search_participants_path,
+																			 html: { method: :post } do |f| %>
+					
+							<%= f.condition_fields do |c| %>
+						<div class="field">
+								<%= c.attribute_fields do |a| %>
+									<%= a.attribute_select %>
+								<% end %>
+								<%= c.predicate_select %>
+								<%= c.value_fields do |v| %>
+									<%= v.text_field :value %>
+								<% end %>
+						</div>
+							<% end %>
+					
+						<%= f.submit "Search", class: "quick-search-btn" %>
+						
+					<% end %></div>
 			</div>	
 		</div>
 	</div>
 
-	<% end %>
+	
 
 </section>
 
