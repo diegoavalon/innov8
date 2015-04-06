@@ -3,9 +3,16 @@ class ParticipantsController  < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		@people = Participant.all 
 		@search = Participant.search(params[:q])
 		@participants = @search.result.page(params[:page])
-		@search.build_condition  
+		@search.build_condition
+		# if @search.nil?
+		# 	respond_to do |format|
+	 #      format.html
+	 #      format.csv { send_data @people.to_csv, :filename => 'Participant-list.csv' }
+	 #    end
+  #   end
 	end
 
 	def search

@@ -5,6 +5,15 @@ class Participant < ActiveRecord::Base
 
 	before_save :uppercase_fields
 
+	# def self.to_csv(results)
+	# 	CSV.generate do |csv|
+	# 		csv << column_names
+	# 		results.each do |participant|
+	# 			csv << participant.attributes.values_at(*column_names)
+	# 		end
+	# 	end
+	# end
+
 	def uppercase_fields
 	  self.fname.capitalize!
 	  self.lname.capitalize!
@@ -96,6 +105,5 @@ class Participant < ActiveRecord::Base
 			right_size
 		end
 	end
-
 
 end

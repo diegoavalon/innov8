@@ -1,0 +1,5 @@
+<%- headers = ['First Name', 'Last Name'] -%>
+<%= CSV.generate_line headers %>
+<%- @participants.each do |participant| -%>
+  <%= CSV.generate_line([participant.fname, participant.lname]) %>
+<%- end -%>

@@ -11,63 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318161818) do
+ActiveRecord::Schema.define(version: 20150406162701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.boolean  "developer_mode", default: false
-    t.boolean  "reports_only",   default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "bodies", force: :cascade do |t|
-    t.integer "participant_id"
-    t.integer "chest"
-    t.integer "waist"
-    t.integer "low_hip"
-    t.integer "high_hip"
-    t.integer "inseam"
-    t.integer "thigh"
-    t.integer "upper_arm"
-    t.integer "sleeve_length"
-    t.integer "employee_id"
-  end
-
-  create_table "employees", force: :cascade do |t|
-    t.string "fname"
-    t.string "lname"
-    t.string "email"
-    t.string "password"
-    t.string "product_department"
-  end
-
-  create_table "foots", force: :cascade do |t|
-    t.integer "participant_id"
-    t.integer "shoe_size"
-    t.integer "lf_width"
-    t.integer "lf_heel_to_arch"
-    t.integer "lf_heel_to_toe"
-    t.integer "rf_width"
-    t.integer "rf_heel_to_arch"
-    t.integer "rf_heel_to_toe"
-    t.integer "employee_id"
-  end
-
-  create_table "hands", force: :cascade do |t|
-    t.integer "participant_id"
-    t.integer "lh_palm_width_flat"
-    t.integer "lh_palm_width_round"
-    t.integer "lh_palm_length"
-    t.integer "lh_middle_finger"
-    t.integer "rh_palm_width_flat"
-    t.integer "rh_palm_width_round"
-    t.integer "rh_palm_length"
-    t.integer "rh_middle_finger"
-    t.integer "employee_id"
-  end
 
   create_table "participants", force: :cascade do |t|
     t.string   "fname"
@@ -87,9 +34,6 @@ ActiveRecord::Schema.define(version: 20150318161818) do
     t.integer  "height_in"
     t.integer  "weight"
     t.string   "bra_size"
-    t.integer  "body_id"
-    t.integer  "hand_id"
-    t.integer  "foot_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "chest"
