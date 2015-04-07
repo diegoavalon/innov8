@@ -19,7 +19,7 @@
 								<%= c.attribute_fields do |a| %>
 									<%= a.attribute_select %>
 								<% end %>
-								<%= c.predicate_select %>
+								<%= c.predicate_select only: [:cont, :lt, :lteq, :gt, :gteq, :eq, :not_eq], compounds: false %>
 								<%= c.value_fields do |v| %>
 									<%= v.text_field :value %>
 								<% end %>

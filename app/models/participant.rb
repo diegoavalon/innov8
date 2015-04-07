@@ -61,7 +61,7 @@ class Participant < ActiveRecord::Base
 				when 9.5..9.8 then   left_size = "XXL"
 				when 9.9..10.3 then  left_size = "XXXL"
 			end
-
+			self.update(left_glove_size: left_size)
 			left_size
 		end
 	end
@@ -101,9 +101,16 @@ class Participant < ActiveRecord::Base
 				when 9.5..9.8 then   right_size = "XXL"
 				when 9.9..10.3 then  right_size = "XXXL"
 			end
+			self.update(right_glove_size: right_size)
 
 			right_size
 		end
 	end
+
+private
+
+	# def self.ransackable_attributes(auth_object = nil)
+	# 	super & %w(fname lname address)
+	# end
 
 end
